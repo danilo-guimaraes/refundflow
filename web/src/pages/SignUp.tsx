@@ -3,7 +3,7 @@ import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { z, ZodError } from "zod";
 import { api } from "../services/api";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AxiosError } from "axios";
 
 const signUpSchema = z
@@ -101,12 +101,12 @@ export function SignUp() {
         Cadastrar
       </Button>
 
-      <a
-        href="/"
+      <Link
+        to="/"
         className="text-sm font-semibold text-gray-100 mt-10 mb-4 text-center hover:text-green-800 transition ease-linear"
       >
         Já tenho uma conta
-      </a>
+      </Link>
     </form>
   );
 }

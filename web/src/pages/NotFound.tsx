@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export function NotFound() {
   return (
     <div className="w-screen h-screen flex justify-center items-center">
@@ -6,12 +8,12 @@ export function NotFound() {
           Ops! Essa página não existe. 🥲
         </h1>
 
-        <a
-          href="/"
+        <Link
+          to="/"
           className="font-semibold text-center text-green-100 hover:text-green-200 transition ease-linear"
         >
           Voltar para o início
-        </a>
+        </Link>
       </div>
     </div>
   );

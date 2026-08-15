@@ -1,3 +1,5 @@
+import { Link, LinkProps } from "react-router";
+
 export type RefundItemProps = {
   id: string;
   name: string;
@@ -6,13 +8,13 @@ export type RefundItemProps = {
   categoryImg: string;
 };
 
-type Props = React.ComponentProps<"a"> & {
+type Props = LinkProps & {
   data: RefundItemProps;
 };
 
 export function RefundItem({ data, ...rest }: Props) {
   return (
-    <a
+    <Link
       className="flex items-center gap-3 hover:bg-green-100/5 cursor-pointer rounded-md p-2"
       {...rest}
     >
@@ -31,6 +33,6 @@ export function RefundItem({ data, ...rest }: Props) {
         <small className="font-normal text-gray-200">R$</small>
         {data.amount}
       </span>
-    </a>
+    </Link>
   );
 }

@@ -1,4 +1,4 @@
-import { Navigate, useLocation } from "react-router";
+import { Link, Navigate, useLocation } from "react-router";
 import okSvg from "../assets/ok.svg";
 
 export function Confirm() {
@@ -21,12 +21,12 @@ export function Confirm() {
         setor financeiro irá entrar em contato com você.
       </p>
 
-      <a
-        href="/"
+      <Link
+        to="/"
         className="w-full p-3 text-center bg-green-100 rounded-lg text-white hover:bg-green-200 transition ease-linear"
       >
         Nova solicitação
-      </a>
+      </Link>
     </div>
   );
 }

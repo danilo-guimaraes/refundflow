@@ -1,4 +1,5 @@
 import { useActionState } from "react";
+import { Link } from "react-router";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { z, ZodError } from "zod";
@@ -62,12 +63,12 @@ export function SignIn() {
         Entrar
       </Button>
 
-      <a
-        href="/signup"
+      <Link
+        to="/signup"
         className="text-sm font-semibold text-gray-100 mt-10 mb-4 text-center hover:text-green-800 transition ease-linear"
       >
         Criar conta
-      </a>
+      </Link>
     </form>
   );
 }

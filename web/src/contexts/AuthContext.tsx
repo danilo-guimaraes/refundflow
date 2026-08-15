@@ -26,7 +26,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
     localStorage.removeItem(`${LOCAL_STORGE_KEY}:user`);
     localStorage.removeItem(`${LOCAL_STORGE_KEY}:token`);
 
-    window.location.assign("/");
+    window.location.assign(import.meta.env.BASE_URL);
   }
   function loadUser() {
     const user = localStorage.getItem(`${LOCAL_STORGE_KEY}:user`);
