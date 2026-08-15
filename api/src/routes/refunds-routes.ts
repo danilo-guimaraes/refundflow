@@ -6,9 +6,11 @@ const refundsRoutes = Router()
 const refundsController = new RefundsController()
 
 import { verifyUserAuthorization } from "@/middlewares/verify-user-Authorization"
+import { submissionLimiter } from "@/middlewares/rate-limiter"
 
 refundsRoutes.post(
   "/",
+  submissionLimiter,
   verifyUserAuthorization(["employee"]),
   refundsController.create
 )

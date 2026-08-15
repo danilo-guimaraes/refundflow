@@ -5,10 +5,13 @@ import crypto from "node:crypto"
 const TMP_FOLDER = path.resolve(__dirname, "..", "..", "tmp")
 const UPLOADS_FOLDER = path.resolve(TMP_FOLDER, "uploads")
 
-const MAX_FILE_SIZE = 1024 * 1024 * 1 // 3MB
+const MAX_FILE_SIZE = 1024 * 1024 * 3 // 3MB
 const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png"]
 
 const MULTER = {
+  limits: {
+    fileSize: MAX_FILE_SIZE,
+  },
   storage: multer.diskStorage({
     destination: TMP_FOLDER,
     filename(request, file, callback) {

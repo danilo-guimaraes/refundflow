@@ -24,7 +24,7 @@ class UploadsController {
             .positive()
             .refine(
               (size) => size <= uploadConfig.MAX_FILE_SIZE,
-              "Arquivo excede o tamanho máximo de 5MB."
+              "Arquivo excede o tamanho máximo de 3MB."
             ),
         })
         .passthrough() // Permite propriedades adicionais que o multer adiciona ao arquivo

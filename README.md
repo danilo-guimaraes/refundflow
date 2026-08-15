@@ -91,7 +91,8 @@ A URL da API que o front-end consome é configurável por variável de ambiente 
 - Só `manager` lista todas as solicitações (com paginação e busca por nome).
 - `employee` e `manager` podem ver o detalhe de uma solicitação específica.
 - Categorias válidas: `food`, `others`, `services`, `transport`, `accommodation`.
-- O comprovante deve ser `jpeg`, `jpg` ou `png`, com até 3MB.
+- O comprovante deve ser `jpeg`, `jpg` ou `png`, com até 3MB (limite reforçado no próprio `multer`, não só depois do upload).
+- Anti-abuso: `POST /users` aceita no máximo 5 requisições por IP a cada 1h; `POST /refunds` e `POST /uploads` aceitam no máximo 10 por IP a cada 15min ([`rate-limiter.ts`](./api/src/middlewares/rate-limiter.ts)).
 
 ## 🔌 Rotas da API
 
