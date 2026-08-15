@@ -28,7 +28,7 @@ export function Routes() {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Route />
     </BrowserRouter>
   );
